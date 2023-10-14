@@ -7,7 +7,7 @@ public class TFPregunta extends Pregunta {
     private boolean respuestaCorrecta;
 
     // Constructor que crea una pregunta verdadero/falso
-    public TFPregunta(String texto, boolean respuestaCorrecta, int peso) {
+    public TFPregunta(String texto, int peso, boolean verdadero) {
         super(texto, peso); // Llama al constructor de la clase base (Pregunta)
         this.respuestaCorrecta = respuestaCorrecta;
     }

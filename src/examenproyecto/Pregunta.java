@@ -1,26 +1,25 @@
 package examenproyecto;
 
-public abstract class Pregunta {
-    private int peso;
-    private String text;
+public abstract class Pregunta { 
+private int puntaje;
+    private final String text;
 
-    public Pregunta(String text, int peso) {
+    public Pregunta(String text, int puntaje) {
         this.text = text;
-        this.peso = peso;
+        this.puntaje = puntaje;
     }
 
-    public int getPeso() {
-        return peso;
+    public int getPuntaje() {
+        return puntaje;
     }
 
-    public abstract boolean buscar();
+    public void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
+    }
 
     public String getText() {
         return text;
     }
+
+    public abstract boolean buscar();
 }
-
-//Contiene una variable peso para representar el peso de la pregunta, así como una variable text para el texto de la pregunta. El texto de la pregunta se establece a través del constructor y no se puede cambiar posteriormente.
-//Se le aplica el métodoabstracto buscar() que permite a las subclases implementar su propia lógica para buscar la respuesta y determinar si es correcta. 
-//Esta función imprime un mensaje que indica si la respuesta es correcta o no.
-
