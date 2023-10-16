@@ -4,42 +4,40 @@ import examenproyecto.Pregunta;
 import java.util.Scanner;
 
 public class TFPregunta extends Pregunta {
-    private boolean respuestaCorrecta;
+    private final boolean respuestaCorrecta; // Variable para almacenar la respuesta correcta
 
-    // Constructor que crea una pregunta verdadero/falso
-    public TFPregunta(String texto, int peso, boolean verdadero) {
-        super(texto, peso); // Llama al constructor de la clase base (Pregunta)
+    // Constructor de la clase TFPregunta
+    public TFPregunta(String text, int puntaje, boolean respuestaCorrecta) {
+        super(text, puntaje);
         this.respuestaCorrecta = respuestaCorrecta;
     }
 
-    // Método para buscar la respuesta del usuario
+    // Método para buscar la respuesta a la pregunta de verdadero o falso
     @Override
     public boolean buscar() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("Respuesta (T/F): ");
-            String respuesta = scanner.nextLine().trim().toLowerCase();
-            if (respuesta.equals("t") || respuesta.equals("f")) {
-                // Convierte la respuesta del usuario en un valor booleano
-                boolean respuestaUsuario = respuesta.equals("t");
-                // Compara la respuesta del usuario con la respuesta correcta
-                boolean esCorrecta = respuestaUsuario == respuestaCorrecta;
-                // Muestra un mensaje indicando si la respuesta es correcta o no
-                System.out.println(esCorrecta ? "Respuesta correcta." : "Respuesta incorrecta.");
-                return esCorrecta; // Devuelve si la respuesta es correcta o no
-            } else {
-                System.out.println("Respuesta no válida. Debe ingresar 'T' o 'F'.");
-                System.out.print("¿Desea intentarlo de nuevo? (Sí/No): ");
-                String intentarDeNuevo = scanner.nextLine().trim().toLowerCase();
-                if (!intentarDeNuevo.equals("sí") && !intentarDeNuevo.equals("si")) {
-                    // Si el usuario no quiere intentarlo de nuevo, se detiene el examen
-                    System.out.println("Stop. Debe estudiar o comenzar un nuevo examen.");
-                    return false; // El usuario respondió incorrectamente
+            System.out.println(this.getText()); // Imprimir la pregunta
+            // Obtener la respuesta del usuario
+            String respuestaUsuario = scanner.nextLine();
+            // Verificar si la respuesta del usuario es verdadera o falsa
+            if (respuestaUsuario.equalsIgnoreCase("t") || respuestaUsuario.equalsIgnoreCase("f")) {
+                boolean respuesta = respuestaUsuario.equalsIgnoreCase("t");
+                // Verificar si la respuesta del usuario es correcta
+                if (respuesta == respuestaCorrecta) {
+                    System.out.println("Respuesta correcta.");
+                    return true;
+                } else {
+                    System.out.println("Respuesta incorrecta, PARA LA PRÓXIMA SERÁ.");
+                    return false;
                 }
+            } else {
+                System.out.println("Respuesta inválida. Por favor, ingrese 't' o 'f'.");
             }
         }
     }
 }
+
 
 //El método buscar()permite al usuario responder preguntas verdadero/falso. 
 //Se le agregó una verificación si la respuesta es "t" o "T" para verdadero, o "f" o "F" para falso.
