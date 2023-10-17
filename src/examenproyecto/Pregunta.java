@@ -22,4 +22,8 @@ private int puntaje;
     }
 
     public abstract boolean buscar();
-}
+
+    boolean esCorrecta() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    }

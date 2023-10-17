@@ -1,9 +1,32 @@
 package examenproyecto;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class ExamDemo {
- public static void main(String[] args) {
-        // Crear un examen y agregar preguntas
+public class ExamDemo implements ActionListener {
+
+    private final JFrame frame;
+    private final JButton button;
+
+    public ExamDemo() {
+        frame = new JFrame("Examen de Futbol");
+        button = new JButton("Realizar Examen");
+        button.setBounds(50, 100, 200, 40);
+        button.addActionListener(this);
+        frame.add(button);
+        frame.setSize(300, 250);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        new ExamDemo();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
         Exam examen = new Exam();
         // Preguntas de verdadero o falso
         examen.agregaPregunta(new TFPregunta("El fútbol se juega con una pelota. (verdadero/falso): ", 2, true));
@@ -24,10 +47,6 @@ public class ExamDemo {
         examen.agregaPregunta(new Resp_Cortas_Pregunta("¿Cuál es el estadio con más capacidad de Europa?", 3, "Camp Nou"));
         // Realizar el examen
         examen.darExam();
+        
     }
 }
-
-
-
-
-

@@ -23,14 +23,22 @@ import java.util.Scanner;
 
     public void darExam() {
         int totalPuntos = 0;
-        int puntosObtenidos = 0;
-        for (Pregunta pregunta : preguntas) {
-            totalPuntos += pregunta.getPuntaje();
-            if (pregunta.buscar()) {
-                puntosObtenidos += pregunta.getPuntaje();
-            }
+        for (int i = 0; i < numPreguntas; i++) {
+            totalPuntos += preguntas[i].getPuntaje();
         }
-        double porcentaje = ((double) puntosObtenidos / totalPuntos) * 100;
-        System.out.format("Porcentaje obtenido: %.0f%% (%d/%d)%n", porcentaje, puntosObtenidos, totalPuntos);
+
+        int puntosObtenidos = 0;
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < numPreguntas; i++) {
+            puntosObtenidos += preguntas[i].buscar() ? preguntas[i].getPuntaje() : 0;
+        }
+
+        float porcentaje = ((float) puntosObtenidos / totalPuntos) * 100;
+        System.out.println("Porcentaje de respuestas correctas: " + porcentaje + "%");
+
+      scanner = new Scanner(System.in);
+        System.out.print("Ingrese su nombre para el registro: ");
+        String nombreUsuario = scanner.nextLine();
+        RegistroResultados.guardarResultado(nombreUsuario, porcentaje);
     }
 }
