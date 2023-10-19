@@ -13,23 +13,24 @@ private final String[] elecciones; //no se le asigna un nuevo valor
     }
 
     @Override
-    public boolean buscar() {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println(this.getText());
-            for (int i = 0; i < elecciones.length; i++) {
-                System.out.println((char) ('a' + i) + ") " + elecciones[i]);
+   public boolean buscar() {
+    Scanner scanner = new Scanner(System.in);
+    while (true) {
+        System.out.println(this.getText());
+        for (int i = 0; i < elecciones.length; i++) {
+            System.out.println((char) ('a' + i) + ") " + elecciones[i]);
+        }
+        String respuestaUsuario = scanner.nextLine();
+        char opcion = respuestaUsuario.toLowerCase().charAt(0);
+        if (opcion >= 'a' && opcion < 'a' + elecciones.length) {
+            if (opcion - 'a' == respuestaCorrecta) {
+                System.out.println("Respuesta correcta.");
+                return true;
+            } else {
+                System.out.println("UPS TE EQUIVOCASTE...");
+                return false;
             }
-            String respuestaUsuario = scanner.nextLine();
-            char opcion = respuestaUsuario.toLowerCase().charAt(0);
-            if (opcion >= 'a' && opcion < 'a' + elecciones.length) {
-                if (opcion - 'a' == respuestaCorrecta) {
-                    System.out.println("Respuesta correcta.");
-                    return true;
-                } else {
-                    System.out.println("Respuesta incorrecta, PARA LA PRÓXIMA SERÁ.");
-                }
-            } 
         }
     }
+   }
 }
