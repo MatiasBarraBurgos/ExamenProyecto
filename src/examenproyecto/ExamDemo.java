@@ -22,11 +22,22 @@ public class ExamDemo implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new ExamDemo();
+        ExamDemo examDemo = new ExamDemo();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String message = """ 
+                         Bienvenido al examen de f\u00fatbol. \u00bfLO PODRAS LOGRAR?...
+                         Las instrucciones son sencillas. Debes utilizar tu conocimiento en el mundo del f\u00fatbol para responder el siguiente examen, que consta de:
+                                         1. Preguntas de verdadero y falso en las que debes responder con 't' o 'f' (true/false). (2pts c/u)
+                                         2. Preguntas de selecci\u00f3n m\u00faltiple en las que debes escribir la letra de la alternativa elegida. (2pts c/u)
+                                         3. Preguntas r\u00e1pidas en las que debes escribir la alternativa que consideres correcta. (3pts c/u
+                         *Al final deberás poner tu nombre y apellido para que se guarden tus resultados.*
+                         *Se te dará la opcion de volver a realizar la evaluacíon , selecciona 'yes' si quieres reintentarlo , o 'no' si quieres finalizar.*
+                                                                     El examen consta de 28pts \u00a1BUENA SUERTE!""";
+        JOptionPane.showMessageDialog(frame, message, "Instrucciones", JOptionPane.INFORMATION_MESSAGE);
+
         Exam examen = new Exam();
         // Preguntas de verdadero o falso
         examen.agregaPregunta(new TFPregunta("El fútbol se juega con una pelota. (verdadero/falso): ", 2, true));
@@ -47,10 +58,14 @@ public class ExamDemo implements ActionListener {
         examen.agregaPregunta(new Resp_Cortas_Pregunta("¿Cuál es el estadio con más capacidad de Europa?", 3, "Camp Nou"));
         // Realizar el examen
         examen.darExam();
-        
+        //añadimos la opción de volver a intentar resolver el exámen
+        int opcion = JOptionPane.showConfirmDialog(frame, "¿Desea volver a intentar el examen?", "Confirmar",
+                JOptionPane.YES_NO_OPTION);
+        if (opcion == JOptionPane.YES_OPTION) {
+            examen.reiniciar();
+        } else {
+            frame.dispose();
+        }
     }
 }
-
-
-
-
+    
