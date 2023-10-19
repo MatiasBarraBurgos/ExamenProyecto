@@ -2,7 +2,7 @@ package examenproyecto;
 
 import java.util.Scanner;
 
-class Resp_Cortas_Pregunta extends Pregunta {
+public class Resp_Cortas_Pregunta extends Pregunta {
     private final String respuestaCorrecta;
 
     public Resp_Cortas_Pregunta(String text, int puntaje, String respuestaCorrecta) {
