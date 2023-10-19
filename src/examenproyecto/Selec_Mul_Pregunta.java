@@ -27,11 +27,9 @@ private String[] elecciones;
                     System.out.println("Respuesta correcta.");
                     return true;
                 } else {
-                    System.out.println("Respuesta incorrecta. Por favor, inténtelo de nuevo.");
+                    System.out.println("Respuesta incorrecta, PARA LA PRÓXIMA SERÁ.");
                 }
-            } else {
-                System.out.println("Opción inválida. Por favor, elija una opción válida.");
-            }
+            } 
         }
     }
 }
