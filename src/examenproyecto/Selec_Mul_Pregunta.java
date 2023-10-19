@@ -3,10 +3,10 @@ package examenproyecto;
 import java.util.Scanner;
 
 public abstract class Selec_Mul_Pregunta extends Pregunta {
-private String[] elecciones;
-    private int respuestaCorrecta;
+private final String[] elecciones; //no se le asigna un nuevo valor
+    private final int respuestaCorrecta;
 
-    public Selec_Mul_Pregunta(String text, int puntaje, String[] elecciones, int respuestaCorrecta) {
+    public Selec_Mul_Pregunta(String text, int puntaje, String[] elecciones, int respuestaCorrecta, int par3) {
         super(text, puntaje);
         this.elecciones = elecciones;
         this.respuestaCorrecta = respuestaCorrecta;
@@ -27,15 +27,9 @@ private String[] elecciones;
                     System.out.println("Respuesta correcta.");
                     return true;
                 } else {
-                    System.out.println("Respuesta incorrecta. Por favor, inténtelo de nuevo.");
+                    System.out.println("Respuesta incorrecta, PARA LA PRÓXIMA SERÁ.");
                 }
-            } else {
-                System.out.println("Opción inválida. Por favor, elija una opción válida.");
-            }
+            } 
         }
     }
 }
-
-
-
-
