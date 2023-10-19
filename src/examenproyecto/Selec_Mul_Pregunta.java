@@ -3,8 +3,8 @@ package examenproyecto;
 import java.util.Scanner;
 
 public abstract class Selec_Mul_Pregunta extends Pregunta {
-private String[] elecciones;
-    private int respuestaCorrecta;
+private final String[] elecciones; //no se le asigna un nuevo valor
+    private final int respuestaCorrecta;
 
     public Selec_Mul_Pregunta(String text, int puntaje, String[] elecciones, int respuestaCorrecta, int par3) {
         super(text, puntaje);

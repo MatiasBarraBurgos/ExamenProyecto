@@ -4,7 +4,7 @@ package examenproyecto;
 import java.util.Scanner;
 
  public class Exam {
-  private Pregunta[] preguntas;
+  private final Pregunta[] preguntas;
     private int numPreguntas;
 
     public Exam() {

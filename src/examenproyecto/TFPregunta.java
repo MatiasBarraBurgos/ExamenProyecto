@@ -3,7 +3,7 @@ package examenproyecto;
 import java.util.Scanner;
 
 public class TFPregunta extends Pregunta {
-    private boolean respuestaCorrecta;
+    private final boolean respuestaCorrecta;
 
     public TFPregunta(String text, int puntaje, boolean respuestaCorrecta) {
         super(text, puntaje);
