@@ -11,17 +11,16 @@ public class Resp_Cortas_Pregunta extends Pregunta {
     }
 
     @Override
-   public boolean buscar() {
+  public boolean buscar() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println(this.getText());
-            String respuestaUsuario = scanner.nextLine();
-            if (respuestaUsuario.equalsIgnoreCase(respuestaCorrecta)) {
-                System.out.println("Respuesta correcta crack.");
-                return true;
-            } else {
-                System.out.println("UHM PARA LA PROXIMA...INCORRECTO");
-            }
+        System.out.println(this.getText());
+        String respuestaUsuario = scanner.nextLine();
+        if (respuestaUsuario.equalsIgnoreCase(respuestaCorrecta)) {
+            System.out.println("Respuesta correcta CRACK.");
+            return true;
+        } else {
+            System.out.println("UHM PARA LA PROXIMA...INCORRECTO");
+            return false;
         }
     }
 }
