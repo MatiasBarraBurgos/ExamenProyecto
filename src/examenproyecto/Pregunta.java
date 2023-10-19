@@ -1,7 +1,7 @@
 package examenproyecto;
 
 public abstract class Pregunta { 
-private int puntaje;
+    private int puntaje;
     private final String text;
 
     public Pregunta(String text, int puntaje) {
@@ -22,5 +22,8 @@ private int puntaje;
     }
 
     public abstract boolean buscar();
-
+    
+    public void reiniciar() {
+        // Restablecer respuestas y resultados a sus valores iniciales
+    }
 }

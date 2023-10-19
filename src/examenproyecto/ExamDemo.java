@@ -22,7 +22,7 @@ public class ExamDemo implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new ExamDemo();
+        ExamDemo examDemo = new ExamDemo();
     }
 
     @Override
@@ -47,6 +47,14 @@ public class ExamDemo implements ActionListener {
         examen.agregaPregunta(new Resp_Cortas_Pregunta("¿Cuál es el estadio con más capacidad de Europa?", 3, "Camp Nou"));
         // Realizar el examen
         examen.darExam();
-        
+        //añadimos la opción de volver a intentar resolver el exámen
+        int opcion = JOptionPane.showConfirmDialog(frame, "¿Desea volver a intentar el examen?", "Confirmar",
+                JOptionPane.YES_NO_OPTION);
+        if (opcion == JOptionPane.YES_OPTION) {
+            examen.reiniciar();
+        } else {
+            frame.dispose();
+        }
     }
 }
+    

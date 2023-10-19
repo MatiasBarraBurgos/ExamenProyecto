@@ -41,4 +41,9 @@ import java.util.Scanner;
         String nombreUsuario = scanner.nextLine();
         RegistroResultados.guardarResultado(nombreUsuario, porcentaje);
     }
+ public void reiniciar() {
+        for (int i = 0; i < numPreguntas; i++) {
+            preguntas[i].reiniciar();
+        }
+    }
 }
