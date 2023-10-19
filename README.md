@@ -16,5 +16,8 @@ La clase Selec_Mul_Pregunta maneja preguntas de opción múltiple en el examen. 
 Exam :
 La clase Exam administra un conjunto de preguntas para un examen dado. Permite agregar preguntas al examen y calcular el puntaje total y el porcentaje obtenido después de que el usuario responde a todas las preguntas.
 
+RegistroResultados:
+La clase RegistroResultados guarda los resultados de un examen en un archivo de texto llamado registros.txt. La función guardarResultado registra el nombre del usuario y el porcentaje obtenido en el examen. Si el archivo no existe, se crea automáticamente.
+
 ExamDemo
 La clase ExamDemo contiene el método main que ejecuta el programa. Crea un examen y agrega preguntas de futbol (nuestra eleccíon). Luego, realiza el examen y muestra el porcentaje obtenido y el puntaje total al usuario.
