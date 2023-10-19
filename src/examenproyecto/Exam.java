@@ -1,4 +1,3 @@
-
 package examenproyecto;
 
 import java.util.Scanner;
@@ -35,6 +34,13 @@ import java.util.Scanner;
 
         float porcentaje = ((float) puntosObtenidos / totalPuntos) * 100;
         System.out.println("Porcentaje de respuestas correctas: " + porcentaje + "%");
+        System.out.println("Puntaje obtenido: " + puntosObtenidos + "/" + totalPuntos);
+        
+        if (porcentaje >= 28) {
+            System.out.println("Aprobado");
+        } else {
+            System.out.println("Reprobado");
+        }
 
       scanner = new Scanner(System.in);
         System.out.print("Ingrese su nombre para el registro: ");

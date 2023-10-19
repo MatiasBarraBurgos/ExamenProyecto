@@ -20,7 +20,7 @@ public class TFPregunta extends Pregunta {
             System.out.println("Correcto máquina!");
             return true;
         } else {
-            System.out.println("Incorrecto...");
+            System.out.println("Incorrecto...QUE PENA.");
             return false;
         }
     }

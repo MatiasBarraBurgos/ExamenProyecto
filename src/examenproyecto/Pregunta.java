@@ -24,6 +24,6 @@ public abstract class Pregunta {
     public abstract boolean buscar();
     
     public void reiniciar() {
-        // Restablecer respuestas y resultados a sus valores iniciales
+        // Restablecer respuestas y resultados a sus valores iniciales para volver a dar el examen.
     }
 }
