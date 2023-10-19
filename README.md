@@ -17,4 +17,4 @@ Exam :
 La clase Exam administra un conjunto de preguntas para un examen dado. Permite agregar preguntas al examen y calcular el puntaje total y el porcentaje obtenido después de que el usuario responde a todas las preguntas.
 
 ExamDemo
-La clase ExamDemo contiene el método main que ejecuta el programa. Crea un examen y agrega preguntas de diferentes tipos. Luego, realiza el examen y muestra el porcentaje obtenido y el puntaje total al usuario.
+La clase ExamDemo contiene el método main que ejecuta el programa. Crea un examen y agrega preguntas de futbol (nuestra eleccíon). Luego, realiza el examen y muestra el porcentaje obtenido y el puntaje total al usuario.
