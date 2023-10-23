@@ -52,4 +52,4 @@ import java.util.Scanner;
             preguntas[i].reiniciar();
         }
     }
-}
+ }

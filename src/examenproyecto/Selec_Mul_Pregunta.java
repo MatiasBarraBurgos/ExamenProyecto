@@ -28,21 +28,10 @@ private final String[] elecciones; //no se le asigna un nuevo valor
                 return true;
             } else {
                 System.out.println("UPS TE EQUIVOCASTE...INCORRECTO");
+                System.out.println("UPS TE EQUIVOCASTE...");
                 return false;
             }
         }
     }
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
